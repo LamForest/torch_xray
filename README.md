@@ -18,7 +18,7 @@ In [2]: a = torch.randn(10,device="cuda")
 In [3]: b = a + 3
 [P:109388] 2025-02-10 00:47:08,114-xray-INFO-(python_dispatch.py:303) {"00001-aten.add.Tensor": {"arguments": {"self": {"dtype": "torch.float32", "shape": [10], "device": "cuda:0", "ptr": "0x4003000000"}, "other": 3}}}
 ```
-其中`{"self": {"dtype": "torch.float32", "shape": [10], "device": "cuda:0"}`就代表了add第一个参数`self`的类型和规模，而other则代表了add第二个参数`other`的♈形状和规模，由于other是一个Scalar，所以直接记录Scalar的值。
+其中`{"self": {"dtype": "torch.float32", "shape": [10], "device": "cuda:0"}`就代表了add第一个参数`self`的类型和规模，而`"other": 3`则代表了add第二个参数`other`的形状和规模，由于other是一个Scalar，所以直接记录other的值为3。
 
 ## 2. 生成单测
 将上述stdout的json保存至文件a.json，
