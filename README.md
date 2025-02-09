@@ -26,8 +26,6 @@ In [3]: b = a + 3
 {"00001-aten.add.Tensor": {"arguments": {"self": {"dtype": "torch.float32", "shape": [10], "device": "cuda:0", "ptr": "0x4003000000"}, "other": 3}}}
 ```
 并执行`jprof a.json`，则会在`pytests/`下产生单测`xtest_00001_aten_add_Tensor.py`，单测代码截取如下：
-```
-
 ```py
     op = torch.ops.aten.add.Tensor
 
